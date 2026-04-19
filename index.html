@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naitik Vora — Software Engineer & Founder</title>
+  <meta name="description" content="Naitik Vora — Software engineer, founder of Blueprintr, CMU MISM student, incoming Snowflake intern. Building AI-powered developer tools." />
+  <meta name="keywords" content="Naitik Vora, software engineer, CMU, Blueprintr, AI, startup founder, Snowflake" />
+  <meta property="og:title" content="Naitik Vora — Software Engineer & Founder" />
+  <meta property="og:description" content="Building AI-powered architecture intelligence at Blueprintr. CMU MISM student. Incoming Snowflake intern." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://madladnate.github.io" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Naitik Vora" />
+  <meta name="twitter:description" content="Software engineer, founder, builder." />
+  <link rel="canonical" href="https://madladnate.github.io" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text-primary: #1a1a18;
+      --text-secondary: #6b6b67;
+      --text-tertiary: #a0a09b;
+      --border-light: rgba(0,0,0,0.1);
+      --border-mid: rgba(0,0,0,0.2);
+      --bg: #fafaf8;
+      --success: #2d7a4f;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-primary: #f0ede8;
+        --text-secondary: #9e9b95;
+        --text-tertiary: #6a6865;
+        --border-light: rgba(255,255,255,0.1);
+        --border-mid: rgba(255,255,255,0.2);
+        --bg: #131311;
+        --success: #4caf78;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Mono', monospace;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 0 1.5rem;
+    }
+
+    .portfolio {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 0 6rem;
+      line-height: 1.7;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 0.5px solid var(--border-light);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .nav-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text-primary); }
+
+    section { display: none; }
+    section.visible { display: block; }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ABOUT */
+    .about-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 2rem;
+    }
+
+    .about-headline em {
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    .about-bio {
+      font-size: 13px;
+      color: var(--text-secondary);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      line-height: 1.9;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 2.5rem;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 12px;
+      border: 0.5px solid var(--border-mid);
+      border-radius: 999px;
+      color: var(--text-secondary);
+      letter-spacing: 0.04em;
+    }
+
+    .about-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .about-links a {
+      font-size: 12px;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 0.5px solid var(--border-mid);
+      padding-bottom: 1px;
+      letter-spacing: 0.02em;
+      transition: opacity 0.15s;
+    }
+
+    .about-links a:hover { opacity: 0.5; border-color: transparent; }
+
+    /* EXPERIENCE */
+    .exp-list { display: flex; flex-direction: column; gap: 2.5rem; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0 2rem;
+    }
+
+    @media (max-width: 480px) {
+      .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+      .exp-divider { margin-left: 0 !important; }
+    }
+
+    .exp-date {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.04em;
+      padding-top: 2px;
+      line-height: 1.5;
+    }
+
+    .exp-role {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 2px;
+      letter-spacing: -0.1px;
+    }
+
+    .exp-company {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .exp-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .exp-divider {
+      border: none;
+      border-top: 0.5px solid var(--border-light);
+      margin: 0 0 0 calc(120px + 2rem);
+    }
+
+    /* PROJECTS */
+    .project-item {
+      padding: 1.5rem 0;
+      border-bottom: 0.5px solid var(--border-light);
+      transition: opacity 0.15s;
+    }
+
+    .project-item:first-child { border-top: 0.5px solid var(--border-light); }
+    .project-item:hover { opacity: 0.65; }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .project-name { font-size: 14px; font-weight: 400; letter-spacing: -0.1px; }
+
+    .project-year { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.04em; }
+
+    .project-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .project-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .ptag {
+      font-size: 10px;
+      padding: 2px 8px;
+      border: 0.5px solid var(--border-light);
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* BLOG */
+    .blog-item {
+      padding: 1.25rem 0;
+      border-bottom: 0.5px solid var(--border-light);
+      transition: opacity 0.15s;
+    }
+
+    .blog-item:first-child { border-top: 0.5px solid var(--border-light); }
+    .blog-item:hover { opacity: 0.65; }
+
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .blog-title { font-size: 14px; font-weight: 400; letter-spacing: -0.1px; flex: 1; }
+    .blog-date { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.04em; white-space: nowrap; }
+
+    .blog-excerpt {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    .blog-tag {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 10px;
+      padding: 2px 8px;
+      border: 0.5px solid var(--border-light);
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* CONTACT */
+    .contact-intro {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+
+    .contact-intro em { font-style: italic; color: var(--text-secondary); }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 0.5px solid var(--border-light);
+    }
+
+    .contact-row:first-of-type { border-top: 0.5px solid var(--border-light); }
+
+    .contact-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      width: 80px;
+      flex-shrink: 0;
+    }
+
+    .contact-value {
+      font-size: 13px;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    .contact-value:hover { opacity: 0.5; }
+
+    .avail-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11px;
+      color: var(--success);
+      margin-top: 1.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .avail-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--success);
+      flex-shrink: 0;
+    }
+
+    footer {
+      margin-top: 6rem;
+      padding-top: 1.5rem;
+      border-top: 0.5px solid var(--border-light);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio">
+    <nav>
+      <a class="nav-name" href="#" onclick="show('about'); return false;">Naitik Vora</a>
+      <ul class="nav-links">
+        <li><a href="#" onclick="show('about'); return false;" class="active" id="nav-about">About</a></li>
+        <li><a href="#" onclick="show('experience'); return false;" id="nav-experience">Experience</a></li>
+        <li><a href="#" onclick="show('projects'); return false;" id="nav-projects">Projects</a></li>
+        <li><a href="#" onclick="show('blog'); return false;" id="nav-blog">Writing</a></li>
+        <li><a href="#" onclick="show('contact'); return false;" id="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ABOUT -->
+    <section id="about" class="visible">
+      <p class="section-label">About</p>
+      <h1 class="about-headline">Software engineer,<br><em>founder, builder.</em></h1>
+      <p class="about-bio">
+        Graduate student at Carnegie Mellon University (MISM, Dec 2026). Previously at JPMorgan Chase.
+        Founder of Blueprintr — an AI-powered architecture intelligence platform for solo founders and engineering teams.
+        Incoming software engineering intern at Snowflake.
+      </p>
+      <div class="about-tags">
+        <span class="tag">AI/ML Systems</span>
+        <span class="tag">Backend Engineering</span>
+        <span class="tag">Product</span>
+        <span class="tag">Startup Founder</span>
+        <span class="tag">Pittsburgh, PA</span>
+      </div>
+      <div class="about-links">
+        <a href="https://github.com/naitikvora" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/naitikvora" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="https://blueprintr.io" target="_blank" rel="noopener">Blueprintr</a>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <p class="section-label">Experience</p>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-date">May – Aug 2026</div>
+          <div>
+            <div class="exp-role">Software Engineering Intern</div>
+            <div class="exp-company">Snowflake</div>
+            <div class="exp-desc">Incoming intern on the engineering team. Working on backend systems and data infrastructure.</div>
+          </div>
+        </div>
+        <hr class="exp-divider">
+        <div class="exp-item">
+          <div class="exp-date">2024 – Present</div>
+          <div>
+            <div class="exp-role">Founder & CEO</div>
+            <div class="exp-company">Blueprintr</div>
+            <div class="exp-desc">Building an AI-powered architecture intelligence platform at Layer 0 — pre-code design phase. Features include Blueprint Scan (GitHub repo health checker) and an Org Knowledge Base (RAG pipeline). Pre-seed fundraising.</div>
+          </div>
+        </div>
+        <hr class="exp-divider">
+        <div class="exp-item">
+          <div class="exp-date">2023</div>
+          <div>
+            <div class="exp-role">Software Engineering Intern</div>
+            <div class="exp-company">KLA Corporation</div>
+            <div class="exp-desc">Designed the FireAnts Agent Architecture — an agentic system automating Ironman monitoring for fab equipment using RAG, FSM-based orchestration, MCP server, and a dashboard UI.</div>
+          </div>
+        </div>
+        <hr class="exp-divider">
+        <div class="exp-item">
+          <div class="exp-date">Prior</div>
+          <div>
+            <div class="exp-role">Software Engineer</div>
+            <div class="exp-company">JPMorgan Chase</div>
+            <div class="exp-desc">Built backend systems with Spring Boot, AWS, Kubernetes, and event-driven architecture across financial products.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <p class="section-label">Projects</p>
+      <div>
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-name">Blueprintr</span>
+            <span class="project-year">2024</span>
+          </div>
+          <p class="project-desc">AI architecture intelligence platform. Blueprint Scan analyzes GitHub repos for architecture health. Org Knowledge Base is a RAG pipeline for engineering context. Targeting solo founders and vibe coders.</p>
+          <div class="project-tags">
+            <span class="ptag">AI</span><span class="ptag">RAG</span><span class="ptag">SaaS</span><span class="ptag">Startup</span>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-name">FireAnts Agent Architecture</span>
+            <span class="project-year">2023</span>
+          </div>
+          <p class="project-desc">Agentic system for fab equipment monitoring at KLA. FSM-based orchestrator with MCP server integration, RAG pipeline, and real-time dashboard. All decisions are data-driven to prevent hallucination on production systems.</p>
+          <div class="project-tags">
+            <span class="ptag">Agents</span><span class="ptag">RAG</span><span class="ptag">FSM</span><span class="ptag">MCP</span>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-name">Flux</span>
+            <span class="project-year">2023</span>
+          </div>
+          <p class="project-desc">GitHub for AI-generated media. Version control, collaboration, and asset management for creative AI workflows. Advanced to Round 2 of the McGinnis Venture Competition.</p>
+          <div class="project-tags">
+            <span class="ptag">AI Media</span><span class="ptag">Version Control</span><span class="ptag">Startup</span>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-header">
+            <span class="project-name">LipSync Service</span>
+            <span class="project-year">2023</span>
+          </div>
+          <p class="project-desc">Wav2Lip-based lip sync service deployed on Modal. Built for a CMU assignment exploring audio-visual AI pipelines and speaker diarization for clinical recordings.</p>
+          <div class="project-tags">
+            <span class="ptag">CV</span><span class="ptag">Audio AI</span><span class="ptag">Modal</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG / WRITING -->
+    <section id="blog">
+      <p class="section-label">Writing</p>
+      <div>
+        <article class="blog-item">
+          <div class="blog-header">
+            <h2 class="blog-title">Why architecture decisions belong before the first line of code</h2>
+            <span class="blog-date">Apr 2025</span>
+          </div>
+          <p class="blog-excerpt">Most teams reach for their IDE before they've thought through service boundaries. Here's what Layer 0 actually means and why it changes everything downstream.</p>
+          <span class="blog-tag">Product thinking</span>
+        </article>
+        <article class="blog-item">
+          <div class="blog-header">
+            <h2 class="blog-title">Building agentic systems that don't hallucinate in production</h2>
+            <span class="blog-date">Mar 2025</span>
+          </div>
+          <p class="blog-excerpt">Lessons from FireAnts: when your agents are making decisions on real fab equipment, "mostly correct" isn't acceptable. A look at FSM-based orchestration and data-driven constraints.</p>
+          <span class="blog-tag">Engineering</span>
+        </article>
+        <article class="blog-item">
+          <div class="blog-header">
+            <h2 class="blog-title">The vibe coder problem: speed without structure</h2>
+            <span class="blog-date">Feb 2025</span>
+          </div>
+          <p class="blog-excerpt">Solo founders are shipping faster than ever with AI tools — and accumulating architectural debt just as fast. What the next wave of developer tooling needs to solve.</p>
+          <span class="blog-tag">Startups</span>
+        </article>
+        <article class="blog-item">
+          <div class="blog-header">
+            <h2 class="blog-title">RAG pipelines as an enterprise moat</h2>
+            <span class="blog-date">Jan 2025</span>
+          </div>
+          <p class="blog-excerpt">Retrieval-augmented generation isn't just a feature — it's a data flywheel. How the Org Knowledge Base in Blueprintr creates compounding value over time.</p>
+          <span class="blog-tag">AI/ML</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <p class="section-label">Contact</p>
+      <p class="contact-intro">Let's build something<br><em>worth talking about.</em></p>
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <a class="contact-value" href="mailto:nvora@andrew.cmu.edu">nvora@andrew.cmu.edu</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">LinkedIn</span>
+        <a class="contact-value" href="https://linkedin.com/in/naitikvora" target="_blank" rel="noopener">linkedin.com/in/naitikvora</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">GitHub</span>
+        <a class="contact-value" href="https://github.com/naitikvora" target="_blank" rel="noopener">github.com/naitikvora</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Based in</span>
+        <span class="contact-value">Pittsburgh, PA</span>
+      </div>
+      <div class="avail-badge">
+        <span class="avail-dot"></span>
+        Open to opportunities after December 2026
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Naitik Vora
+    </footer>
+  </div>
+
+  <script>
+    function show(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('visible'));
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      document.getElementById(id).classList.add('visible');
+      document.getElementById('nav-' + id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
