@@ -4,19 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naitik Vora — Software Engineer & Founder</title>
-  <meta name="description" content="Naitik Vora — Software engineer, founder of Blueprintr, CMU MISM student, incoming Snowflake intern. Building AI-powered developer tools." />
-  <meta name="keywords" content="Naitik Vora, software engineer, CMU, Blueprintr, AI, startup founder, Snowflake" />
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Naitik Vora is a software engineer and startup founder building AI-powered architecture intelligence at Blueprintr. CMU MISM '26, incoming Snowflake SWE intern." />
+  <meta name="keywords" content="Naitik Vora, software engineer, Blueprintr, Carnegie Mellon, CMU, Snowflake, AI, machine learning, backend engineer, Pittsburgh, startup founder, RAG, agentic AI" />
+  <meta name="author" content="Naitik Vora" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#131311" media="(prefers-color-scheme: dark)" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Naitik Vora — Software Engineer & Founder" />
-  <meta property="og:description" content="Building AI-powered architecture intelligence at Blueprintr. CMU MISM student. Incoming Snowflake intern." />
+  <meta property="og:description" content="Building AI-powered architecture intelligence at Blueprintr. CMU MISM '26. Incoming Snowflake SWE intern." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://madladnate.github.io" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Naitik Vora" />
-  <meta name="twitter:description" content="Software engineer, founder, builder." />
+  <meta property="og:image" content="https://madladnate.github.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Naitik Vora — Software Engineer & Founder" />
+  <meta property="og:site_name" content="Naitik Vora" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Naitik Vora — Software Engineer & Founder" />
+  <meta name="twitter:description" content="Software engineer, founder, builder. Building AI-powered developer tools at Blueprintr." />
+  <meta name="twitter:image" content="https://madladnate.github.io/og-image.png" />
+
   <link rel="canonical" href="https://madladnate.github.io" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Naitik Vora",
+    "url": "https://madladnate.github.io",
+    "email": "nvora@andrew.cmu.edu",
+    "jobTitle": "Software Engineer & Founder",
+    "description": "Software engineer and startup founder. CMU MISM student, Blueprintr founder, incoming Snowflake intern.",
+    "image": "https://madladnate.github.io/og-image.png",
+    "sameAs": [
+      "https://github.com/naitikvora",
+      "https://linkedin.com/in/naitikvora",
+      "https://blueprintr.io"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Blueprintr",
+      "url": "https://blueprintr.io"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Carnegie Mellon University",
+      "url": "https://cmu.edu"
+    },
+    "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Backend Engineering", "Software Architecture", "RAG Systems", "Agentic AI"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pittsburgh",
+      "addressRegion": "PA",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -52,6 +108,19 @@
       padding: 0 1.5rem;
     }
 
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--bg);
+      color: var(--text-primary);
+      padding: 8px 16px;
+      z-index: 100;
+      font-size: 12px;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
     .portfolio {
       max-width: 720px;
       margin: 0 auto;
@@ -59,6 +128,7 @@
       line-height: 1.7;
     }
 
+    /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
@@ -66,8 +136,7 @@
       margin-bottom: 5rem;
       padding-bottom: 1.5rem;
       border-bottom: 0.5px solid var(--border-light);
-      flex-wrap: wrap;
-      gap: 1rem;
+      position: relative;
     }
 
     .nav-name {
@@ -98,8 +167,60 @@
     .nav-links a:hover,
     .nav-links a.active { color: var(--text-primary); }
 
-    section { display: none; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 10;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--text-primary);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    @media (max-width: 560px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 3rem;
+      }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        border-top: 0.5px solid var(--border-light);
+        padding-top: 1rem;
+        margin-top: 0.25rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0.5rem 0; }
+    }
+
+    /* SECTIONS */
+    section {
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
     section.visible { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
     .section-label {
       font-size: 10px;
@@ -112,7 +233,7 @@
     /* ABOUT */
     .about-headline {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(28px, 5vw, 38px);
+      font-size: clamp(26px, 5vw, 38px);
       font-weight: 400;
       line-height: 1.2;
       letter-spacing: -0.5px;
@@ -175,11 +296,6 @@
       gap: 0 2rem;
     }
 
-    @media (max-width: 480px) {
-      .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
-      .exp-divider { margin-left: 0 !important; }
-    }
-
     .exp-date {
       font-size: 11px;
       color: var(--text-tertiary);
@@ -213,6 +329,11 @@
       margin: 0 0 0 calc(120px + 2rem);
     }
 
+    @media (max-width: 480px) {
+      .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+      .exp-divider { margin-left: 0; }
+    }
+
     /* PROJECTS */
     .project-item {
       padding: 1.5rem 0;
@@ -228,11 +349,11 @@
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 6px;
+      gap: 1rem;
     }
 
     .project-name { font-size: 14px; font-weight: 400; letter-spacing: -0.1px; }
-
-    .project-year { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.04em; }
+    .project-year { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.04em; white-space: nowrap; }
 
     .project-desc {
       font-size: 12px;
@@ -328,6 +449,7 @@
       color: var(--text-primary);
       text-decoration: none;
       transition: opacity 0.15s;
+      word-break: break-word;
     }
 
     .contact-value:hover { opacity: 0.5; }
@@ -348,8 +470,115 @@
       border-radius: 50%;
       background: var(--success);
       flex-shrink: 0;
+      animation: pulse 2.5s ease-in-out infinite;
     }
 
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* CONTACT FORM */
+    .contact-form-wrap {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 0.5px solid var(--border-light);
+    }
+
+    .contact-form-title {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-field label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--text-primary);
+      background: transparent;
+      border: 0.5px solid var(--border-mid);
+      padding: 10px 12px;
+      outline: none;
+      transition: border-color 0.15s;
+      resize: vertical;
+      -webkit-appearance: none;
+      appearance: none;
+      border-radius: 0;
+      width: 100%;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: var(--text-tertiary); }
+
+    .form-field input:focus,
+    .form-field textarea:focus { border-color: var(--text-primary); }
+
+    .form-submit {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-send {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--text-primary);
+      border: none;
+      padding: 10px 22px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+
+    .btn-send:hover { opacity: 0.75; }
+    .btn-send:disabled { opacity: 0.4; cursor: default; }
+
+    .form-status {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .form-status.success { color: var(--success); }
+    .form-status.error { color: #b94040; }
+
+    /* FOOTER */
     footer {
       margin-top: 6rem;
       padding-top: 1.5rem;
@@ -357,202 +586,239 @@
       font-size: 11px;
       color: var(--text-tertiary);
       letter-spacing: 0.04em;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    footer a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    footer a:hover { color: var(--text-primary); }
+
+    .blog-loading {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.04em;
+      padding: 1rem 0;
+    }
+
+    .blog-error {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      padding: 1rem 0;
+      border-top: 0.5px solid var(--border-light);
+    }
+
+    @media (max-width: 400px) {
+      body { padding: 0 1rem; }
+      .portfolio { padding: 2rem 0 4rem; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <div class="portfolio">
-    <nav>
+    <nav aria-label="Primary navigation">
       <a class="nav-name" href="#" onclick="show('about'); return false;">Naitik Vora</a>
-      <ul class="nav-links">
-        <li><a href="#" onclick="show('about'); return false;" class="active" id="nav-about">About</a></li>
-        <li><a href="#" onclick="show('experience'); return false;" id="nav-experience">Experience</a></li>
-        <li><a href="#" onclick="show('projects'); return false;" id="nav-projects">Projects</a></li>
-        <li><a href="#" onclick="show('blog'); return false;" id="nav-blog">Writing</a></li>
-        <li><a href="#" onclick="show('contact'); return false;" id="nav-contact">Contact</a></li>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#about" onclick="show('about'); return false;" class="active" id="nav-about">About</a></li>
+        <li><a href="#experience" onclick="show('experience'); return false;" id="nav-experience">Experience</a></li>
+        <li><a href="#projects" onclick="show('projects'); return false;" id="nav-projects">Projects</a></li>
+        <li><a href="#blog" onclick="show('blog'); return false;" id="nav-blog">Writing</a></li>
+        <li><a href="#contact" onclick="show('contact'); return false;" id="nav-contact">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- ABOUT -->
-    <section id="about" class="visible">
-      <p class="section-label">About</p>
-      <h1 class="about-headline">Software engineer,<br><em>founder, builder.</em></h1>
-      <p class="about-bio">
-        Graduate student at Carnegie Mellon University (MISM, Dec 2026). Previously at JPMorgan Chase.
-        Founder of Blueprintr — an AI-powered architecture intelligence platform for solo founders and engineering teams.
-        Incoming software engineering intern at Snowflake.
-      </p>
-      <div class="about-tags">
-        <span class="tag">AI/ML Systems</span>
-        <span class="tag">Backend Engineering</span>
-        <span class="tag">Product</span>
-        <span class="tag">Startup Founder</span>
-        <span class="tag">Pittsburgh, PA</span>
-      </div>
-      <div class="about-links">
-        <a href="https://github.com/naitikvora" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/naitikvora" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="/resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a href="https://blueprintr.io" target="_blank" rel="noopener">Blueprintr</a>
-      </div>
-    </section>
+    <main id="main">
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <p class="section-label">Experience</p>
-      <div class="exp-list">
-        <div class="exp-item">
-          <div class="exp-date">May – Aug 2026</div>
-          <div>
-            <div class="exp-role">Software Engineering Intern</div>
-            <div class="exp-company">Snowflake</div>
-            <div class="exp-desc">Incoming intern on the engineering team. Working on backend systems and data infrastructure.</div>
-          </div>
+      <!-- ABOUT -->
+      <section id="about" class="visible" aria-label="About Naitik Vora">
+        <p class="section-label">About</p>
+        <h1 class="about-headline">Software engineer,<br><em>founder, builder.</em></h1>
+        <p class="about-bio">
+          Graduate student at Carnegie Mellon University (MISM, Dec 2026). Previously at JPMorgan Chase.
+          Founder of Blueprintr — an AI-powered architecture intelligence platform for solo founders and engineering teams.
+          Incoming software engineering intern at Snowflake.
+        </p>
+        <div class="about-tags">
+          <span class="tag">AI/ML Systems</span>
+          <span class="tag">Backend Engineering</span>
+          <span class="tag">Product</span>
+          <span class="tag">Startup Founder</span>
+          <span class="tag">Pittsburgh, PA</span>
         </div>
-        <hr class="exp-divider">
-        <div class="exp-item">
-          <div class="exp-date">2024 – Present</div>
-          <div>
-            <div class="exp-role">Founder & CEO</div>
-            <div class="exp-company">Blueprintr</div>
-            <div class="exp-desc">Building an AI-powered architecture intelligence platform at Layer 0 — pre-code design phase. Features include Blueprint Scan (GitHub repo health checker) and an Org Knowledge Base (RAG pipeline). Pre-seed fundraising.</div>
-          </div>
+        <div class="about-links">
+          <a href="https://github.com/naitikvora" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com/in/naitikvora" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="./resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a href="https://blueprintr.io" target="_blank" rel="noopener noreferrer">Blueprintr</a>
         </div>
-        <hr class="exp-divider">
-        <div class="exp-item">
-          <div class="exp-date">2023</div>
-          <div>
-            <div class="exp-role">Software Engineering Intern</div>
-            <div class="exp-company">KLA Corporation</div>
-            <div class="exp-desc">Designed the FireAnts Agent Architecture — an agentic system automating Ironman monitoring for fab equipment using RAG, FSM-based orchestration, MCP server, and a dashboard UI.</div>
-          </div>
-        </div>
-        <hr class="exp-divider">
-        <div class="exp-item">
-          <div class="exp-date">Prior</div>
-          <div>
-            <div class="exp-role">Software Engineer</div>
-            <div class="exp-company">JPMorgan Chase</div>
-            <div class="exp-desc">Built backend systems with Spring Boot, AWS, Kubernetes, and event-driven architecture across financial products.</div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <p class="section-label">Projects</p>
-      <div>
-        <div class="project-item">
-          <div class="project-header">
-            <span class="project-name">Blueprintr</span>
-            <span class="project-year">2024</span>
+      <!-- EXPERIENCE -->
+      <section id="experience" aria-label="Work experience">
+        <p class="section-label">Experience</p>
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-date">May – Aug 2026</div>
+            <div>
+              <div class="exp-role">Software Engineering Intern</div>
+              <div class="exp-company">Snowflake</div>
+              <div class="exp-desc">Incoming intern on the engineering team. Working on backend systems and data infrastructure.</div>
+            </div>
           </div>
-          <p class="project-desc">AI architecture intelligence platform. Blueprint Scan analyzes GitHub repos for architecture health. Org Knowledge Base is a RAG pipeline for engineering context. Targeting solo founders and vibe coders.</p>
-          <div class="project-tags">
-            <span class="ptag">AI</span><span class="ptag">RAG</span><span class="ptag">SaaS</span><span class="ptag">Startup</span>
+          <hr class="exp-divider" aria-hidden="true">
+          <div class="exp-item">
+            <div class="exp-date">2024 – Present</div>
+            <div>
+              <div class="exp-role">Founder & CEO</div>
+              <div class="exp-company">Blueprintr</div>
+              <div class="exp-desc">Building an AI-powered architecture intelligence platform at Layer 0 — pre-code design phase. Features include Blueprint Scan (GitHub repo health checker) and an Org Knowledge Base (RAG pipeline). Pre-seed fundraising.</div>
+            </div>
           </div>
-        </div>
-        <div class="project-item">
-          <div class="project-header">
-            <span class="project-name">FireAnts Agent Architecture</span>
-            <span class="project-year">2023</span>
+          <hr class="exp-divider" aria-hidden="true">
+          <div class="exp-item">
+            <div class="exp-date">2023</div>
+            <div>
+              <div class="exp-role">Software Engineering Intern</div>
+              <div class="exp-company">KLA Corporation</div>
+              <div class="exp-desc">Designed the FireAnts Agent Architecture — an agentic system automating Ironman monitoring for fab equipment using RAG, FSM-based orchestration, MCP server, and a dashboard UI.</div>
+            </div>
           </div>
-          <p class="project-desc">Agentic system for fab equipment monitoring at KLA. FSM-based orchestrator with MCP server integration, RAG pipeline, and real-time dashboard. All decisions are data-driven to prevent hallucination on production systems.</p>
-          <div class="project-tags">
-            <span class="ptag">Agents</span><span class="ptag">RAG</span><span class="ptag">FSM</span><span class="ptag">MCP</span>
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-header">
-            <span class="project-name">Flux</span>
-            <span class="project-year">2023</span>
-          </div>
-          <p class="project-desc">GitHub for AI-generated media. Version control, collaboration, and asset management for creative AI workflows. Advanced to Round 2 of the McGinnis Venture Competition.</p>
-          <div class="project-tags">
-            <span class="ptag">AI Media</span><span class="ptag">Version Control</span><span class="ptag">Startup</span>
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-header">
-            <span class="project-name">LipSync Service</span>
-            <span class="project-year">2023</span>
-          </div>
-          <p class="project-desc">Wav2Lip-based lip sync service deployed on Modal. Built for a CMU assignment exploring audio-visual AI pipelines and speaker diarization for clinical recordings.</p>
-          <div class="project-tags">
-            <span class="ptag">CV</span><span class="ptag">Audio AI</span><span class="ptag">Modal</span>
+          <hr class="exp-divider" aria-hidden="true">
+          <div class="exp-item">
+            <div class="exp-date">Prior</div>
+            <div>
+              <div class="exp-role">Software Engineer</div>
+              <div class="exp-company">JPMorgan Chase</div>
+              <div class="exp-desc">Built backend systems with Spring Boot, AWS, Kubernetes, and event-driven architecture across financial products.</div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- BLOG / WRITING -->
-    <section id="blog">
-      <p class="section-label">Writing</p>
-      <div>
-        <article class="blog-item">
-          <div class="blog-header">
-            <h2 class="blog-title">Why architecture decisions belong before the first line of code</h2>
-            <span class="blog-date">Apr 2025</span>
+      <!-- PROJECTS -->
+      <section id="projects" aria-label="Projects">
+        <p class="section-label">Projects</p>
+        <div>
+          <div class="project-item">
+            <div class="project-header">
+              <span class="project-name">Blueprintr</span>
+              <span class="project-year">2024</span>
+            </div>
+            <p class="project-desc">AI architecture intelligence platform. Blueprint Scan analyzes GitHub repos for architecture health. Org Knowledge Base is a RAG pipeline for engineering context. Targeting solo founders and vibe coders.</p>
+            <div class="project-tags">
+              <span class="ptag">AI</span><span class="ptag">RAG</span><span class="ptag">SaaS</span><span class="ptag">Startup</span>
+            </div>
           </div>
-          <p class="blog-excerpt">Most teams reach for their IDE before they've thought through service boundaries. Here's what Layer 0 actually means and why it changes everything downstream.</p>
-          <span class="blog-tag">Product thinking</span>
-        </article>
-        <article class="blog-item">
-          <div class="blog-header">
-            <h2 class="blog-title">Building agentic systems that don't hallucinate in production</h2>
-            <span class="blog-date">Mar 2025</span>
+          <div class="project-item">
+            <div class="project-header">
+              <span class="project-name">FireAnts Agent Architecture</span>
+              <span class="project-year">2023</span>
+            </div>
+            <p class="project-desc">Agentic system for fab equipment monitoring at KLA. FSM-based orchestrator with MCP server integration, RAG pipeline, and real-time dashboard. All decisions are data-driven to prevent hallucination on production systems.</p>
+            <div class="project-tags">
+              <span class="ptag">Agents</span><span class="ptag">RAG</span><span class="ptag">FSM</span><span class="ptag">MCP</span>
+            </div>
           </div>
-          <p class="blog-excerpt">Lessons from FireAnts: when your agents are making decisions on real fab equipment, "mostly correct" isn't acceptable. A look at FSM-based orchestration and data-driven constraints.</p>
-          <span class="blog-tag">Engineering</span>
-        </article>
-        <article class="blog-item">
-          <div class="blog-header">
-            <h2 class="blog-title">The vibe coder problem: speed without structure</h2>
-            <span class="blog-date">Feb 2025</span>
+          <div class="project-item">
+            <div class="project-header">
+              <span class="project-name">Flux</span>
+              <span class="project-year">2023</span>
+            </div>
+            <p class="project-desc">GitHub for AI-generated media. Version control, collaboration, and asset management for creative AI workflows. Advanced to Round 2 of the McGinnis Venture Competition.</p>
+            <div class="project-tags">
+              <span class="ptag">AI Media</span><span class="ptag">Version Control</span><span class="ptag">Startup</span>
+            </div>
           </div>
-          <p class="blog-excerpt">Solo founders are shipping faster than ever with AI tools — and accumulating architectural debt just as fast. What the next wave of developer tooling needs to solve.</p>
-          <span class="blog-tag">Startups</span>
-        </article>
-        <article class="blog-item">
-          <div class="blog-header">
-            <h2 class="blog-title">RAG pipelines as an enterprise moat</h2>
-            <span class="blog-date">Jan 2025</span>
+          <div class="project-item">
+            <div class="project-header">
+              <span class="project-name">LipSync Service</span>
+              <span class="project-year">2023</span>
+            </div>
+            <p class="project-desc">Wav2Lip-based lip sync service deployed on Modal. Built for a CMU assignment exploring audio-visual AI pipelines and speaker diarization for clinical recordings.</p>
+            <div class="project-tags">
+              <span class="ptag">CV</span><span class="ptag">Audio AI</span><span class="ptag">Modal</span>
+            </div>
           </div>
-          <p class="blog-excerpt">Retrieval-augmented generation isn't just a feature — it's a data flywheel. How the Org Knowledge Base in Blueprintr creates compounding value over time.</p>
-          <span class="blog-tag">AI/ML</span>
-        </article>
-      </div>
-    </section>
+        </div>
+      </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <p class="section-label">Contact</p>
-      <p class="contact-intro">Let's build something<br><em>worth talking about.</em></p>
-      <div class="contact-row">
-        <span class="contact-label">Email</span>
-        <a class="contact-value" href="mailto:nvora@andrew.cmu.edu">nvora@andrew.cmu.edu</a>
-      </div>
-      <div class="contact-row">
-        <span class="contact-label">LinkedIn</span>
-        <a class="contact-value" href="https://linkedin.com/in/naitikvora" target="_blank" rel="noopener">linkedin.com/in/naitikvora</a>
-      </div>
-      <div class="contact-row">
-        <span class="contact-label">GitHub</span>
-        <a class="contact-value" href="https://github.com/naitikvora" target="_blank" rel="noopener">github.com/naitikvora</a>
-      </div>
-      <div class="contact-row">
-        <span class="contact-label">Based in</span>
-        <span class="contact-value">Pittsburgh, PA</span>
-      </div>
-      <div class="avail-badge">
-        <span class="avail-dot"></span>
-        Open to opportunities after December 2026
-      </div>
-    </section>
+      <!-- BLOG / WRITING — powered by WordPress REST API -->
+      <section id="blog" aria-label="Writing">
+        <p class="section-label">Writing</p>
+        <div id="blogPosts">
+          <p class="blog-loading" id="blogLoading">Loading...</p>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" aria-label="Contact">
+        <p class="section-label">Contact</p>
+        <p class="contact-intro">Let's build something<br><em>worth talking about.</em></p>
+
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <a class="contact-value" href="mailto:naitik25vora@gmail.com">naitik25vora@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">LinkedIn</span>
+          <a class="contact-value" href="https://linkedin.com/in/naitikvora" target="_blank" rel="noopener noreferrer">linkedin.com/in/naitikvora</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">GitHub</span>
+          <a class="contact-value" href="https://github.com/naitikvora" target="_blank" rel="noopener noreferrer">github.com/naitikvora</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Based in</span>
+          <span class="contact-value">United States</span>
+        </div>
+        <div class="avail-badge" aria-label="Availability: open to opportunities">
+          <span class="avail-dot" aria-hidden="true"></span>
+          Open to opportunities
+        </div>
+
+        <!-- Contact Form — powered by Formspree -->
+        <div class="contact-form-wrap">
+          <p class="contact-form-title">Send a message</p>
+          <!-- Replace xyzabcde with your Formspree form ID from formspree.io/forms -->
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xreraqrw" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="What's on your mind?" rows="5" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn-send" id="submitBtn">Send</button>
+              <span class="form-status" id="formStatus" role="status" aria-live="polite"></span>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </main>
 
     <footer>
-      &copy; 2025 Naitik Vora
+      <span>&copy; 2026 Naitik Vora</span>
+      <a href="./resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
     </footer>
   </div>
 
@@ -563,7 +829,126 @@
       document.getElementById(id).classList.add('visible');
       document.getElementById('nav-' + id).classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (id === 'blog') loadBlogPosts();
+      const navLinks = document.getElementById('navLinks');
+      const toggle = document.getElementById('navToggle');
+      navLinks.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
     }
+
+    function toggleNav() {
+      const navLinks = document.getElementById('navLinks');
+      const toggle = document.getElementById('navToggle');
+      const isOpen = navLinks.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    // WordPress REST API — update this URL when you deploy WordPress
+    const WP_URL = 'http://localhost:8080';
+    const WP_API = `${WP_URL}/wp-json/wp/v2`;
+
+    let blogLoaded = false;
+
+    function formatDate(iso) {
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    }
+
+    function isoYearMonth(iso) {
+      return iso.slice(0, 7);
+    }
+
+    function stripHtml(html) {
+      return html.replace(/<[^>]+>/g, '').replace(/\[&hellip;\]/g, '...').replace(/&#8230;/g, '...').trim();
+    }
+
+    async function loadBlogPosts() {
+      if (blogLoaded) return;
+      const container = document.getElementById('blogPosts');
+      const loading = document.getElementById('blogLoading');
+
+      try {
+        const [postsRes, catsRes] = await Promise.all([
+          fetch(`${WP_API}/posts?per_page=10&_fields=id,title,excerpt,date,link,categories&_embed=false`),
+          fetch(`${WP_API}/categories?per_page=100&_fields=id,name`)
+        ]);
+
+        if (!postsRes.ok) throw new Error(`HTTP ${postsRes.status}`);
+
+        const posts = await postsRes.json();
+        const cats = catsRes.ok ? await catsRes.json() : [];
+        const catMap = Object.fromEntries(cats.map(c => [c.id, c.name]));
+
+        loading.remove();
+        blogLoaded = true;
+
+        if (!posts.length) {
+          container.innerHTML = '<p class="blog-error">No posts yet.</p>';
+          return;
+        }
+
+        container.innerHTML = posts.map(post => {
+          const title = post.title.rendered;
+          const excerpt = stripHtml(post.excerpt.rendered);
+          const date = formatDate(post.date);
+          const datetime = isoYearMonth(post.date);
+          const tag = post.categories.length ? (catMap[post.categories[0]] || '') : '';
+          return `
+            <article class="blog-item">
+              <a href="${post.link}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;display:block;">
+                <div class="blog-header">
+                  <h2 class="blog-title">${title}</h2>
+                  <time class="blog-date" datetime="${datetime}">${date}</time>
+                </div>
+                <p class="blog-excerpt">${excerpt}</p>
+                ${tag ? `<span class="blog-tag">${tag}</span>` : ''}
+              </a>
+            </article>`;
+        }).join('');
+
+      } catch (err) {
+        loading.remove();
+        container.innerHTML = `<p class="blog-error">Couldn't load posts — make sure WordPress is running at <a href="${WP_URL}" target="_blank" rel="noopener" style="color:inherit">${WP_URL}</a></p>`;
+      }
+    }
+
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      formStatus.textContent = '';
+      formStatus.className = 'form-status';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          formStatus.textContent = 'Message sent.';
+          formStatus.classList.add('success');
+          form.reset();
+        } else {
+          const data = await res.json().catch(() => ({}));
+          formStatus.textContent = data.error || 'Something went wrong. Try emailing directly.';
+          formStatus.classList.add('error');
+        }
+      } catch {
+        formStatus.textContent = 'Network error. Try emailing directly.';
+        formStatus.classList.add('error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send';
+      }
+    });
   </script>
 </body>
 </html>
