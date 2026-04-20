@@ -373,45 +373,6 @@
       text-transform: uppercase;
     }
 
-    /* BLOG */
-    .blog-item {
-      padding: 1.25rem 0;
-      border-bottom: 0.5px solid var(--border-light);
-      transition: opacity 0.15s;
-    }
-
-    .blog-item:first-child { border-top: 0.5px solid var(--border-light); }
-    .blog-item:hover { opacity: 0.65; }
-
-    .blog-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 4px;
-    }
-
-    .blog-title { font-size: 14px; font-weight: 400; letter-spacing: -0.1px; flex: 1; }
-    .blog-date { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.04em; white-space: nowrap; }
-
-    .blog-excerpt {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      max-width: 580px;
-    }
-
-    .blog-tag {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 10px;
-      padding: 2px 8px;
-      border: 0.5px solid var(--border-light);
-      color: var(--text-tertiary);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
     /* CONTACT */
     .contact-intro {
       font-family: 'DM Serif Display', serif;
@@ -600,20 +561,6 @@
 
     footer a:hover { color: var(--text-primary); }
 
-    .blog-loading {
-      font-size: 12px;
-      color: var(--text-tertiary);
-      letter-spacing: 0.04em;
-      padding: 1rem 0;
-    }
-
-    .blog-error {
-      font-size: 12px;
-      color: var(--text-tertiary);
-      padding: 1rem 0;
-      border-top: 0.5px solid var(--border-light);
-    }
-
     @media (max-width: 400px) {
       body { padding: 0 1rem; }
       .portfolio { padding: 2rem 0 4rem; }
@@ -633,7 +580,6 @@
         <li><a href="#about" onclick="show('about'); return false;" class="active" id="nav-about">About</a></li>
         <li><a href="#experience" onclick="show('experience'); return false;" id="nav-experience">Experience</a></li>
         <li><a href="#projects" onclick="show('projects'); return false;" id="nav-projects">Projects</a></li>
-        <li><a href="#blog" onclick="show('blog'); return false;" id="nav-blog">Writing</a></li>
         <li><a href="#contact" onclick="show('contact'); return false;" id="nav-contact">Contact</a></li>
       </ul>
     </nav>
@@ -753,14 +699,6 @@
         </div>
       </section>
 
-      <!-- BLOG / WRITING — powered by WordPress REST API -->
-      <section id="blog" aria-label="Writing">
-        <p class="section-label">Writing</p>
-        <div id="blogPosts">
-          <p class="blog-loading" id="blogLoading">Loading...</p>
-        </div>
-      </section>
-
       <!-- CONTACT -->
       <section id="contact" aria-label="Contact">
         <p class="section-label">Contact</p>
@@ -829,7 +767,6 @@
       document.getElementById(id).classList.add('visible');
       document.getElementById('nav-' + id).classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (id === 'blog') loadBlogPosts();
       const navLinks = document.getElementById('navLinks');
       const toggle = document.getElementById('navToggle');
       navLinks.classList.remove('open');
@@ -843,75 +780,6 @@
       const isOpen = navLinks.classList.toggle('open');
       toggle.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
-    }
-
-    // WordPress REST API — update this URL when you deploy WordPress
-    const WP_URL = 'http://localhost:8080';
-    const WP_API = `${WP_URL}/wp-json/wp/v2`;
-
-    let blogLoaded = false;
-
-    function formatDate(iso) {
-      const d = new Date(iso);
-      return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-    }
-
-    function isoYearMonth(iso) {
-      return iso.slice(0, 7);
-    }
-
-    function stripHtml(html) {
-      return html.replace(/<[^>]+>/g, '').replace(/\[&hellip;\]/g, '...').replace(/&#8230;/g, '...').trim();
-    }
-
-    async function loadBlogPosts() {
-      if (blogLoaded) return;
-      const container = document.getElementById('blogPosts');
-      const loading = document.getElementById('blogLoading');
-
-      try {
-        const [postsRes, catsRes] = await Promise.all([
-          fetch(`${WP_API}/posts?per_page=10&_fields=id,title,excerpt,date,link,categories&_embed=false`),
-          fetch(`${WP_API}/categories?per_page=100&_fields=id,name`)
-        ]);
-
-        if (!postsRes.ok) throw new Error(`HTTP ${postsRes.status}`);
-
-        const posts = await postsRes.json();
-        const cats = catsRes.ok ? await catsRes.json() : [];
-        const catMap = Object.fromEntries(cats.map(c => [c.id, c.name]));
-
-        loading.remove();
-        blogLoaded = true;
-
-        if (!posts.length) {
-          container.innerHTML = '<p class="blog-error">No posts yet.</p>';
-          return;
-        }
-
-        container.innerHTML = posts.map(post => {
-          const title = post.title.rendered;
-          const excerpt = stripHtml(post.excerpt.rendered);
-          const date = formatDate(post.date);
-          const datetime = isoYearMonth(post.date);
-          const tag = post.categories.length ? (catMap[post.categories[0]] || '') : '';
-          return `
-            <article class="blog-item">
-              <a href="${post.link}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;display:block;">
-                <div class="blog-header">
-                  <h2 class="blog-title">${title}</h2>
-                  <time class="blog-date" datetime="${datetime}">${date}</time>
-                </div>
-                <p class="blog-excerpt">${excerpt}</p>
-                ${tag ? `<span class="blog-tag">${tag}</span>` : ''}
-              </a>
-            </article>`;
-        }).join('');
-
-      } catch (err) {
-        loading.remove();
-        container.innerHTML = `<p class="blog-error">Couldn't load posts — make sure WordPress is running at <a href="${WP_URL}" target="_blank" rel="noopener" style="color:inherit">${WP_URL}</a></p>`;
-      }
     }
 
     const form = document.getElementById('contactForm');
