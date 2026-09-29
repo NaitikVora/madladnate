@@ -1,869 +1,128 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naitik Vora — Software Engineer & Founder</title>
-
-  <!-- Primary SEO -->
-  <meta name="description" content="Naitik Vora is a software engineer and startup founder building AI-powered architecture intelligence at Blueprintr. CMU MISM '26, incoming Snowflake SWE intern." />
-  <meta name="keywords" content="Naitik Vora, software engineer, Blueprintr, Carnegie Mellon, CMU, Snowflake, AI, machine learning, backend engineer, Pittsburgh, startup founder, RAG, agentic AI" />
-  <meta name="author" content="Naitik Vora" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#131311" media="(prefers-color-scheme: dark)" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Naitik Vora — Software Engineer & Founder" />
-  <meta property="og:description" content="Building AI-powered architecture intelligence at Blueprintr. CMU MISM '26. Incoming Snowflake SWE intern." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Naitik Vora — Software Engineer & Founder" />
-  <meta property="og:site_name" content="Naitik Vora" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Naitik Vora — Software Engineer & Founder" />
-  <meta name="twitter:description" content="Software engineer, founder, builder. Building AI-powered developer tools at Blueprintr." />
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Naitik Vora",
-    "email": "naitik25vora@gmail.com",
-    "jobTitle": "Software Engineer & Founder",
-    "description": "Software engineer and startup founder. CMU MISM student, Blueprintr founder, incoming Snowflake intern.",
-    "sameAs": [
-      "https://github.com/naitikvora",
-      "https://linkedin.com/in/naitikvora"
-    ],
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "Carnegie Mellon University",
-      "url": "https://cmu.edu"
-    },
-    "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Backend Engineering", "Software Architecture", "RAG Systems", "Agentic AI"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Pittsburgh",
-      "addressRegion": "PA",
-      "addressCountry": "US"
-    }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naitik Vora — Software Engineer</title>
+<!-- Primary SEO -->
+<meta content="Naitik Vora is a software engineer focused on AI systems and backend infrastructure. Snowflake intern, previously JPMorgan Chase. CMU MISM '26." name="description"/>
+<meta content="Naitik Vora, software engineer, Carnegie Mellon, CMU, Snowflake, AI, machine learning, backend engineer, Pittsburgh, RAG, agentic AI" name="keywords"/>
+<meta content="Naitik Vora" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#faf9f5" media="(prefers-color-scheme: light)" name="theme-color"/>
+<!-- Open Graph -->
+<meta content="Naitik Vora — Software Engineer" property="og:title"/>
+<meta content="Naitik Vora is a software engineer focused on AI systems and backend infrastructure. Snowflake intern, previously JPMorgan Chase. CMU MISM '26." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Naitik Vora — Software Engineer" property="og:image:alt"/>
+<meta content="Naitik Vora" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<!-- Twitter Card -->
+<meta content="summary" name="twitter:card"/>
+<meta content="Naitik Vora — Software Engineer" name="twitter:title"/>
+<meta content="Naitik Vora is a software engineer focused on AI systems and backend infrastructure. Snowflake intern, previously JPMorgan Chase. CMU MISM '26." name="twitter:description"/>
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Naitik Vora",
+  "email": "naitik25vora@gmail.com",
+  "jobTitle": "Software Engineer",
+  "description": "Naitik Vora is a software engineer focused on AI systems and backend infrastructure. Snowflake intern, previously JPMorgan Chase. CMU MISM '26.",
+  "sameAs": [
+    "https://github.com/naitikvora",
+    "https://linkedin.com/in/naitikvora"
+  ],
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Carnegie Mellon University",
+    "url": "https://cmu.edu"
+  },
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Backend Engineering",
+    "Software Architecture",
+    "RAG Systems",
+    "Agentic AI"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pittsburgh",
+    "addressRegion": "PA",
+    "addressCountry": "US"
   }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
-
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --text-primary: #1a1a18;
-      --text-secondary: #6b6b67;
-      --text-tertiary: #a0a09b;
-      --border-light: rgba(0,0,0,0.1);
-      --border-mid: rgba(0,0,0,0.2);
-      --bg: #fafaf8;
-      --success: #2d7a4f;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --text-primary: #f0ede8;
-        --text-secondary: #9e9b95;
-        --text-tertiary: #6a6865;
-        --border-light: rgba(255,255,255,0.1);
-        --border-mid: rgba(255,255,255,0.2);
-        --bg: #131311;
-        --success: #4caf78;
-      }
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Mono', monospace;
-      background: var(--bg);
-      color: var(--text-primary);
-      min-height: 100vh;
-      padding: 0 1.5rem;
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--bg);
-      color: var(--text-primary);
-      padding: 8px 16px;
-      z-index: 100;
-      font-size: 12px;
-      transition: top 0.2s;
-    }
-    .skip-link:focus { top: 0; }
-
-    .portfolio {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 3rem 0 6rem;
-      line-height: 1.7;
-    }
-
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 0.5px solid var(--border-light);
-      position: relative;
-    }
-
-    .nav-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 18px;
-      font-weight: 400;
-      letter-spacing: -0.3px;
-      color: var(--text-primary);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--text-primary); }
-
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      z-index: 10;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 1px;
-      background: var(--text-primary);
-      transition: transform 0.2s, opacity 0.2s;
-    }
-
-    .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .nav-toggle.open span:nth-child(2) { opacity: 0; }
-    .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-    @media (max-width: 560px) {
-      nav {
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        margin-bottom: 3rem;
-      }
-      .nav-toggle { display: flex; }
-      .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        gap: 0;
-        border-top: 0.5px solid var(--border-light);
-        padding-top: 1rem;
-        margin-top: 0.25rem;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links li { padding: 0.5rem 0; }
-    }
-
-    /* SECTIONS */
-    section {
-      display: none;
-      animation: fadeIn 0.2s ease;
-    }
-    section.visible { display: block; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .section-label {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 2.5rem;
-    }
-
-    /* ABOUT */
-    .about-headline {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(26px, 5vw, 38px);
-      font-weight: 400;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-      margin-bottom: 2rem;
-    }
-
-    .about-headline em {
-      font-style: italic;
-      color: var(--text-secondary);
-    }
-
-    .about-bio {
-      font-size: 13px;
-      color: var(--text-secondary);
-      max-width: 540px;
-      margin-bottom: 2.5rem;
-      line-height: 1.9;
-    }
-
-    .about-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 2.5rem;
-    }
-
-    .tag {
-      font-size: 11px;
-      padding: 4px 12px;
-      border: 0.5px solid var(--border-mid);
-      border-radius: 999px;
-      color: var(--text-secondary);
-      letter-spacing: 0.04em;
-    }
-
-    .about-links {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .about-links a {
-      font-size: 12px;
-      color: var(--text-primary);
-      text-decoration: none;
-      border-bottom: 0.5px solid var(--border-mid);
-      padding-bottom: 1px;
-      letter-spacing: 0.02em;
-      transition: opacity 0.15s;
-    }
-
-    .about-links a:hover { opacity: 0.5; border-color: transparent; }
-
-    /* EXPERIENCE */
-    .exp-list { display: flex; flex-direction: column; gap: 2.5rem; }
-
-    .exp-item {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 0 2rem;
-    }
-
-    .exp-date {
-      font-size: 11px;
-      color: var(--text-tertiary);
-      letter-spacing: 0.04em;
-      padding-top: 2px;
-      line-height: 1.5;
-    }
-
-    .exp-role {
-      font-size: 14px;
-      font-weight: 400;
-      margin-bottom: 2px;
-      letter-spacing: -0.1px;
-    }
-
-    .exp-company {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-    }
-
-    .exp-desc {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    .exp-divider {
-      border: none;
-      border-top: 0.5px solid var(--border-light);
-      margin: 0 0 0 calc(120px + 2rem);
-    }
-
-    @media (max-width: 480px) {
-      .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
-      .exp-divider { margin-left: 0; }
-    }
-
-    /* PROJECTS */
-    .project-item {
-      padding: 1.5rem 0;
-      border-bottom: 0.5px solid var(--border-light);
-      transition: opacity 0.15s;
-    }
-
-    .project-item:first-child { border-top: 0.5px solid var(--border-light); }
-    .project-item:hover { opacity: 0.65; }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 6px;
-      gap: 1rem;
-    }
-
-    .project-name { font-size: 14px; font-weight: 400; letter-spacing: -0.1px; }
-    .project-year { font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.04em; white-space: nowrap; }
-
-    .project-desc {
-      font-size: 12px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 10px;
-    }
-
-    .project-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-
-    .ptag {
-      font-size: 10px;
-      padding: 2px 8px;
-      border: 0.5px solid var(--border-light);
-      color: var(--text-tertiary);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    /* CONTACT */
-    .contact-intro {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(22px, 4vw, 30px);
-      font-weight: 400;
-      letter-spacing: -0.5px;
-      line-height: 1.25;
-      margin-bottom: 2.5rem;
-      max-width: 480px;
-    }
-
-    .contact-intro em { font-style: italic; color: var(--text-secondary); }
-
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 1rem 0;
-      border-bottom: 0.5px solid var(--border-light);
-    }
-
-    .contact-row:first-of-type { border-top: 0.5px solid var(--border-light); }
-
-    .contact-label {
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      width: 80px;
-      flex-shrink: 0;
-    }
-
-    .contact-value {
-      font-size: 13px;
-      color: var(--text-primary);
-      text-decoration: none;
-      transition: opacity 0.15s;
-      word-break: break-word;
-    }
-
-    .contact-value:hover { opacity: 0.5; }
-
-    .avail-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 11px;
-      color: var(--success);
-      margin-top: 1.5rem;
-      letter-spacing: 0.04em;
-    }
-
-    .avail-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--success);
-      flex-shrink: 0;
-      animation: pulse 2.5s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    /* CONTACT FORM */
-    .contact-form-wrap {
-      margin-top: 3rem;
-      padding-top: 2.5rem;
-      border-top: 0.5px solid var(--border-light);
-    }
-
-    .contact-form-title {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    @media (max-width: 480px) {
-      .form-row { grid-template-columns: 1fr; }
-    }
-
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .form-field label {
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-    }
-
-    .form-field input,
-    .form-field textarea {
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
-      color: var(--text-primary);
-      background: transparent;
-      border: 0.5px solid var(--border-mid);
-      padding: 10px 12px;
-      outline: none;
-      transition: border-color 0.15s;
-      resize: vertical;
-      -webkit-appearance: none;
-      appearance: none;
-      border-radius: 0;
-      width: 100%;
-    }
-
-    .form-field input::placeholder,
-    .form-field textarea::placeholder { color: var(--text-tertiary); }
-
-    .form-field input:focus,
-    .form-field textarea:focus { border-color: var(--text-primary); }
-
-    .form-submit {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-send {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--bg);
-      background: var(--text-primary);
-      border: none;
-      padding: 10px 22px;
-      cursor: pointer;
-      transition: opacity 0.15s;
-      flex-shrink: 0;
-    }
-
-    .btn-send:hover { opacity: 0.75; }
-    .btn-send:disabled { opacity: 0.4; cursor: default; }
-
-    .form-status {
-      font-size: 12px;
-      color: var(--text-secondary);
-    }
-
-    .form-status.success { color: var(--success); }
-    .form-status.error { color: #b94040; }
-
-    /* FOOTER */
-    footer {
-      margin-top: 6rem;
-      padding-top: 1.5rem;
-      border-top: 0.5px solid var(--border-light);
-      font-size: 11px;
-      color: var(--text-tertiary);
-      letter-spacing: 0.04em;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    footer a {
-      color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-
-    footer a:hover { color: var(--text-primary); }
-
-    @media (max-width: 400px) {
-      body { padding: 0 1rem; }
-      .portfolio { padding: 2rem 0 4rem; }
-    }
-  </style>
+}
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;display=swap" rel="stylesheet"/>
+<link href="style.css?v=portrait" rel="stylesheet"/>
+<link href="https://naitikvora.github.io/" rel="canonical"/>
+<meta content="https://naitikvora.github.io/" property="og:url"/>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+<header class="profile-header">
+<div class="header-text">
+<p class="eyebrow">Software engineer</p>
+<h1>Naitik Vora</h1>
+<p class="tagline">Agentic AI systems, Databases, backend engineering &amp; product · Carnegie Mellon</p>
+<nav aria-label="Social and contact links">
+<a href="./resume.pdf">Resume</a><a href="https://github.com/NaitikVora">GitHub</a><a href="https://linkedin.com/in/naitikvora">LinkedIn</a><a href="mailto:naitik25vora@gmail.com">Email</a>
+</nav>
+</div>
+<img class="avatar" src="./naitik.jpeg" alt="Naitik Vora" width="132" height="132" fetchpriority="high"/>
+</header>
+<section aria-label="About" class="about">
+<p>I'm a graduate student at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, pursuing a Master of Information Systems Management (December 2026). Previously, I worked as a software engineer at JPMorgan Chase, building backend systems across financial products.</p>
+<p>At Snowflake, I worked on Spark-to-Snowpark migration tooling, agent evaluation, and LLM context management. My interests span AI/ML systems, retrieval-augmented generation, and the backend infrastructure that turns ideas into products.</p>
+</section>
+<section aria-labelledby="experience-title" id="experience">
+<h2 id="experience-title">Experience</h2>
+<ul class="roles">
+<li><div><strong>Carnegie Mellon University</strong> — Teaching Assistant<p class="role-location">Pittsburgh, PA · Part-time</p><p>Teaching assistant for Distributed Systems and Time Series Forecasting in Python.</p></div><span>Aug 2026–Present</span></li>
 
-  <div class="portfolio">
-    <nav aria-label="Primary navigation">
-      <a class="nav-name" href="#" onclick="show('about'); return false;">Naitik Vora</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleNav()">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="#about" onclick="show('about'); return false;" class="active" id="nav-about">About</a></li>
-        <li><a href="#experience" onclick="show('experience'); return false;" id="nav-experience">Experience</a></li>
-        <li><a href="#projects" onclick="show('projects'); return false;" id="nav-projects">Projects</a></li>
-        <li><a href="#contact" onclick="show('contact'); return false;" id="nav-contact">Contact</a></li>
-      </ul>
-    </nav>
+<li><div><strong>Snowflake</strong> — Software Engineer Intern<p class="role-location">Bellevue, WA</p><ul class="role-details"><li>Owned Spark-to-Snowpark migration tooling, using predicate pushdown, column and partition pruning, and cost-based query optimization to reduce distributed query execution time by 34%.</li><li>Built an agent evaluation harness with workload-specific evaluations and differential testing of Spark and Snowpark Connect outputs, achieving 96% validation accuracy. Added a Streamlit dashboard for regression diagnostics.</li><li>Engineered LLM context management with LRU caching of prompts and translation artifacts, plus context slicing for large source files, eliminating token-limit failures and redundant LLM calls.</li></ul></div><span>May–Aug 2026</span></li>
+<li><div><strong>Carnegie Mellon University</strong> — Teaching Assistant<p class="role-location">Pittsburgh, PA · Part-time</p><p>Teaching assistant appointment in Distributed Systems.</p></div><span>Jan–May 2026</span></li>
+<li><div><strong>JPMorgan Chase</strong> — Software Engineer<p class="role-location">Mumbai, India</p><ul class="role-details">
+<li>Built Java and Spring Boot microservices for global banking workflows, improving transaction throughput by 20%. Designed AWS, Kafka, and Kubernetes systems with 99.9% availability and support for 5× load spikes.</li>
+<li>Modernized legacy systems, migrated 3M+ records without data loss, and reduced API latency by 30%. Automated Jenkins delivery pipelines to cut manual deployment errors by 70%.</li>
+<li>Developed a RAG prototype for SQL generation, debugging, and incident analysis, reducing investigation time by 30%. Received the JPMC Shining Star Award and led 10+ technical knowledge-sharing sessions.</li>
+</ul></div><span>Aug 2023–Aug 2025</span></li>
+<li><div><strong>ASAPPP</strong> — Software Engineering Intern</div><span>2019</span></li>
+</ul>
+<p class="section-note">Full history in my <a href="./resume.pdf">resume</a>.</p>
+</section>
+<section aria-labelledby="projects-title" id="projects">
+<h2 id="projects-title">Selected projects</h2>
 
-    <main id="main">
+<article>
+<h3><a href="https://blueprintrai.com/">Blueprintr AI</a></h3>
+<p class="meta">Azure · Agentic AI · Enterprise infrastructure</p>
+<p>Agentic AI infrastructure for enterprises.</p>
+<p><strong>Milestones:</strong> Hosted on Microsoft Azure; built agentic AI infrastructure for enterprise use.</p>
+</article>
 
-      <!-- ABOUT -->
-      <section id="about" class="visible" aria-label="About Naitik Vora">
-        <p class="section-label">About</p>
-        <h1 class="about-headline">AI/ML focused Software Engineer,<br><em>founder, builder.</em></h1>
-        <p class="about-bio">
-          Graduate student at Carnegie Mellon University (MISM, Dec 2026). Previously at JPMorgan Chase.
-          Founder of Blueprintr — an AI-powered architecture intelligence platform for solo founders and engineering teams.
-          Incoming software engineering intern at Snowflake.
-        </p>
-        <div class="about-tags">
-          <span class="tag">AI/ML Systems</span>
-          <span class="tag">Backend Engineering</span>
-          <span class="tag">Product</span>
-          <span class="tag">Startup Founder</span>
-          <span class="tag">Pittsburgh, PA</span>
-        </div>
-        <div class="about-links">
-          <a href="https://github.com/naitikvora" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/naitikvora" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="./resume.pdf" target="_blank" rel="noopener">Resume</a>
-          <a href="https://youtu.be/Jyfq3qn0nJ0" target="_blank" rel="noopener noreferrer">Blueprintr</a>
-        </div>
-      </section>
-
-      <!-- EXPERIENCE -->
-      <section id="experience" aria-label="Work experience">
-        <p class="section-label">Experience</p>
-        <div class="exp-list">
-          <div class="exp-item">
-            <div class="exp-date">May – Aug 2026</div>
-            <div>
-              <div class="exp-role">Software Engineering Intern</div>
-              <div class="exp-company">Snowflake</div>
-              <div class="exp-desc">Incoming intern on the engineering team. Working on backend systems and data infrastructure.</div>
-            </div>
-          </div>
-          <hr class="exp-divider" aria-hidden="true">
-          <div class="exp-item">
-            <div class="exp-date">2026 – Present</div>
-            <div>
-              <div class="exp-role">Founder & CEO</div>
-              <div class="exp-company">Blueprintr</div>
-              <div class="exp-desc">Building an AI-powered architecture intelligence platform at Layer 0 — pre-code design phase. Features include Blueprint Scan (GitHub repo health checker) and an Org Knowledge Base (RAG pipeline). Pre-seed fundraising.</div>
-            </div>
-          </div>
-          <hr class="exp-divider" aria-hidden="true">
-          <div class="exp-item">
-            <div class="exp-date">Aug 2023 – Aug 2025</div>
-            <div>
-              <div class="exp-role">Software Engineer</div>
-              <div class="exp-company">JPMorgan Chase</div>
-              <div class="exp-desc">Built backend systems with Spring Boot, AWS, Kubernetes, and event-driven architecture across financial products.</div>
-            </div>
-          </div>
-          <hr class="exp-divider" aria-hidden="true">
-          <div class="exp-item">
-            <div class="exp-date">Apr – Jun 2019</div>
-            <div>
-              <div class="exp-role">Software Engineering Intern</div>
-              <div class="exp-company">ASAPPP · Mumbai, India</div>
-              <div class="exp-desc">Built backend services and contributed to early product development during a formative internship in Mumbai.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects" aria-label="Projects">
-        <p class="section-label">Projects</p>
-        <div>
-          <div class="project-item">
-            <div class="project-header">
-              <span class="project-name">Blueprintr</span>
-              <span class="project-year">2026</span>
-            </div>
-            <p class="project-desc">AI architecture intelligence platform. Blueprint Scan analyzes GitHub repos for architecture health. Org Knowledge Base is a RAG pipeline for engineering context. Targeting solo founders and vibe coders.</p>
-            <div class="project-tags">
-              <span class="ptag">AI</span><span class="ptag">RAG</span><span class="ptag">SaaS</span><span class="ptag">Startup</span>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-header">
-              <a class="project-name" href="https://github.com/NaitikVora/quant-quest" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">Quant Quest</a>
-              <span class="project-year">2025</span>
-            </div>
-            <p class="project-desc">Chess.com for quant trading — a gamified quantitative finance education and simulation platform where users make real trading decisions and compete on leaderboards.</p>
-            <div class="project-tags">
-              <span class="ptag">TypeScript</span><span class="ptag">FinTech</span><span class="ptag">Gamification</span>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-header">
-              <a class="project-name" href="https://github.com/NaitikVora/quant-agent" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">Quant Agent</a>
-              <span class="project-year">2025</span>
-            </div>
-            <p class="project-desc">Gamified platform for simulating historic financial crises with an AI-powered coaching agent. Make trading decisions, watch the AI analyze your moves, and learn from every choice.</p>
-            <div class="project-tags">
-              <span class="ptag">TypeScript</span><span class="ptag">AI Agent</span><span class="ptag">Finance</span>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-header">
-              <a class="project-name" href="https://github.com/NaitikVora/Sassy-Scotty" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">Sassy Scotty</a>
-              <span class="project-year">2025</span>
-            </div>
-            <p class="project-desc">Gen Z-styled productivity app for CMU students. Manages tasks, syncs with Canvas, tracks sprints, and includes an AI vibe coach that keeps you motivated.</p>
-            <div class="project-tags">
-              <span class="ptag">TypeScript</span><span class="ptag">AI</span><span class="ptag">CMU</span><span class="ptag">Productivity</span>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-header">
-              <a class="project-name" href="https://github.com/NaitikVora/Flux" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">Flux</a>
-              <span class="project-year">2023</span>
-            </div>
-            <p class="project-desc">GitHub for AI-generated media. Version control, collaboration, and asset management for creative AI workflows. Advanced to Round 2 of the McGinnis Venture Competition.</p>
-            <div class="project-tags">
-              <span class="ptag">AI Media</span><span class="ptag">Version Control</span><span class="ptag">Startup</span>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-header">
-              <a class="project-name" href="https://github.com/NaitikVora/LipSync" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">LipSync Service</a>
-              <span class="project-year">2023</span>
-            </div>
-            <p class="project-desc">Wav2Lip-based lip sync service deployed on Modal. Built for a CMU assignment exploring audio-visual AI pipelines and speaker diarization for clinical recordings.</p>
-            <div class="project-tags">
-              <span class="ptag">CV</span><span class="ptag">Audio AI</span><span class="ptag">Modal</span>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-header">
-              <span class="project-name">Rural Health Tracker</span>
-              <span class="project-year">2023</span>
-            </div>
-            <p class="project-desc">Cloud-deployed VGG19 CNN transfer-learning pipeline on Google Cloud for medical image classification, achieving 96% accuracy in detecting cataract and diabetic retinopathy. Built scalable Django REST APIs integrated with a Flutter mobile app for real-time, cloud-based inference in low-bandwidth rural environments. Published as an award-winning IEEE paper at ICACTA 2023: "Early Diagnosis of Cataract and Diabetic Retinopathy using a Cloud-Based Deep Learning Model" — Mumbai, India, pp. 1–6, doi: <a href="https://doi.org/10.1109/ICACTA58201.2023.10392985" target="_blank" rel="noopener noreferrer" style="color:inherit;">10.1109/ICACTA58201.2023.10392985</a>.</p>
-            <div class="project-tags">
-              <span class="ptag">Python</span><span class="ptag">Django</span><span class="ptag">Flutter</span><span class="ptag">TensorFlow</span><span class="ptag">GCP</span><span class="ptag">IEEE</span>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-header">
-              <a class="project-name" href="https://github.com/NaitikVora/watchapp" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">WatchApp</a>
-              <span class="project-year">2021</span>
-            </div>
-            <p class="project-desc">Neighbourhood watch app with anonymous crime reporting, real-time garbage tracking via IoT, and a community chat — built in Flutter with Firebase.</p>
-            <div class="project-tags">
-              <span class="ptag">Flutter</span><span class="ptag">Firebase</span><span class="ptag">IoT</span>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-header">
-              <a class="project-name" href="https://github.com/NaitikVora/BroBot" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">BroBot</a>
-              <span class="project-year">2019</span>
-            </div>
-            <p class="project-desc">Financial assistant chatbot built for a hackathon in Android Studio — gives personalized budgeting advice and spending insights via conversational UI.</p>
-            <div class="project-tags">
-              <span class="ptag">Java</span><span class="ptag">Android</span><span class="ptag">Chatbot</span><span class="ptag">Hackathon</span>
-            </div>
-          </div>
-          <div class="project-item">
-            <div class="project-header">
-              <a class="project-name" href="https://github.com/NaitikVora/GeoCodeApp" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">GeoCode App</a>
-              <span class="project-year">2019</span>
-            </div>
-            <p class="project-desc">C# desktop app that geocodes human-readable addresses into lat/long coordinates and plots markers on an interactive map.</p>
-            <div class="project-tags">
-              <span class="ptag">C#</span><span class="ptag">.NET</span><span class="ptag">Geospatial</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" aria-label="Contact">
-        <p class="section-label">Contact</p>
-        <p class="contact-intro">Let's build something<br><em>worth talking about.</em></p>
-
-        <div class="contact-row">
-          <span class="contact-label">Email</span>
-          <a class="contact-value" href="mailto:naitik25vora@gmail.com">naitik25vora@gmail.com</a>
-        </div>
-        <div class="contact-row">
-          <span class="contact-label">LinkedIn</span>
-          <a class="contact-value" href="https://linkedin.com/in/naitikvora" target="_blank" rel="noopener noreferrer">linkedin.com/in/naitikvora</a>
-        </div>
-        <div class="contact-row">
-          <span class="contact-label">GitHub</span>
-          <a class="contact-value" href="https://github.com/naitikvora" target="_blank" rel="noopener noreferrer">github.com/naitikvora</a>
-        </div>
-        <div class="contact-row">
-          <span class="contact-label">Based in</span>
-          <span class="contact-value">United States</span>
-        </div>
-        <div class="avail-badge" aria-label="Availability: open to opportunities">
-          <span class="avail-dot" aria-hidden="true"></span>
-          Open to opportunities
-        </div>
-
-        <!-- Contact Form — powered by Formspree -->
-        <div class="contact-form-wrap">
-          <p class="contact-form-title">Send a message</p>
-          <!-- Replace xyzabcde with your Formspree form ID from formspree.io/forms -->
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xreraqrw" method="POST" novalidate>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
-              </div>
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="What's on your mind?" rows="5" required></textarea>
-            </div>
-            <div class="form-submit">
-              <button type="submit" class="btn-send" id="submitBtn">Send</button>
-              <span class="form-status" id="formStatus" role="status" aria-live="polite"></span>
-            </div>
-          </form>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <span>&copy; 2026 Naitik Vora</span>
-      <a href="./resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
-    </footer>
-  </div>
-
-  <script>
-    function show(id) {
-      document.querySelectorAll('section').forEach(s => s.classList.remove('visible'));
-      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-      document.getElementById(id).classList.add('visible');
-      document.getElementById('nav-' + id).classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      const navLinks = document.getElementById('navLinks');
-      const toggle = document.getElementById('navToggle');
-      navLinks.classList.remove('open');
-      toggle.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-
-    function toggleNav() {
-      const navLinks = document.getElementById('navLinks');
-      const toggle = document.getElementById('navToggle');
-      const isOpen = navLinks.classList.toggle('open');
-      toggle.classList.toggle('open', isOpen);
-      toggle.setAttribute('aria-expanded', String(isOpen));
-    }
-
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const formStatus = document.getElementById('formStatus');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      formStatus.textContent = '';
-      formStatus.className = 'form-status';
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          formStatus.textContent = 'Message sent.';
-          formStatus.classList.add('success');
-          form.reset();
-        } else {
-          const data = await res.json().catch(() => ({}));
-          formStatus.textContent = data.error || 'Something went wrong. Try emailing directly.';
-          formStatus.classList.add('error');
-        }
-      } catch {
-        formStatus.textContent = 'Network error. Try emailing directly.';
-        formStatus.classList.add('error');
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send';
-      }
-    });
-  </script>
-</body>
-</html>
+<article><h3><a href="https://github.com/NaitikVora/quant-quest">Quant Quest</a></h3><p class="meta">2025 · TypeScript · FinTech · Gamification</p><p>Chess.com for quant trading — a gamified quantitative finance education and simulation platform where users make real trading decisions and compete on leaderboards.</p></article>
+<article><h3><a href="https://github.com/NaitikVora/quant-agent">Quant Agent</a></h3><p class="meta">2025 · TypeScript · AI Agent · Finance</p><p>Gamified platform for simulating historic financial crises with an AI-powered coaching agent. Make trading decisions, watch the AI analyze your moves, and learn from every choice.</p></article>
+<article><h3><a href="https://github.com/NaitikVora/Sassy-Scotty">Sassy Scotty</a></h3><p class="meta">2025 · TypeScript · AI · CMU · Productivity</p><p>Gen Z-styled productivity app for CMU students. Manages tasks, syncs with Canvas, tracks sprints, and includes an AI vibe coach that keeps you motivated.</p></article>
+<details><summary>More projects</summary><article><h3><a href="https://github.com/NaitikVora/Flux">Flux</a></h3><p class="meta">2023 · AI Media · Version Control · Startup</p><p>GitHub for AI-generated media. Version control, collaboration, and asset management for creative AI workflows. Advanced to Round 2 of the McGinnis Venture Competition.</p></article>
+<article><h3><a href="https://github.com/NaitikVora/LipSync">LipSync Service</a></h3><p class="meta">2023 · CV · Audio AI · Modal</p><p>Wav2Lip-based lip sync service deployed on Modal. Built for a CMU assignment exploring audio-visual AI pipelines and speaker diarization for clinical recordings.</p></article>
+<article><h3>Rural Health Tracker</h3><p class="meta">2023 · Python · Django · Flutter · TensorFlow · GCP · IEEE</p><p>Cloud-deployed VGG19 CNN transfer-learning pipeline on Google Cloud for medical image classification, achieving 96% accuracy in detecting cataract and diabetic retinopathy. Built scalable Django REST APIs integrated with a Flutter mobile app for real-time, cloud-based inference in low-bandwidth rural environments. Published as an award-winning IEEE paper at ICACTA 2023: "Early Diagnosis of Cataract and Diabetic Retinopathy using a Cloud-Based Deep Learning Model" — Mumbai, India, pp. 1–6, doi: <a href="https://doi.org/10.1109/ICACTA58201.2023.10392985" rel="noopener noreferrer" style="color:inherit;" target="_blank">10.1109/ICACTA58201.2023.10392985</a>.</p></article>
+<article><h3><a href="https://github.com/NaitikVora/watchapp">WatchApp</a></h3><p class="meta">2021 · Flutter · Firebase · IoT</p><p>Neighbourhood watch app with anonymous crime reporting, real-time garbage tracking via IoT, and a community chat — built in Flutter with Firebase.</p></article>
+<article><h3><a href="https://github.com/NaitikVora/BroBot">BroBot</a></h3><p class="meta">2019 · Java · Android · Chatbot · Hackathon</p><p>Financial assistant chatbot built for a hackathon in Android Studio — gives personalized budgeting advice and spending insights via conversational UI.</p></article>
+<article><h3><a href="https://github.com/NaitikVora/GeoCodeApp">GeoCode App</a></h3><p class="meta">2019 · C# · .NET · Geospatial</p><p>C# desktop app that geocodes human-readable addresses into lat/long coordinates and plots markers on an interactive map.</p></article></details>
+</section>
+<section aria-labelledby="contact-title" id="contact">
+<h2 id="contact-title">Get in touch</h2>
+<p>For conversations about AI systems, software engineering, or building products, reach me at <a href="mailto:naitik25vora@gmail.com">naitik25vora@gmail.com</a>.</p>
+</section>
+<footer><p>Pittsburgh, PA <span aria-hidden="true">·</span> Naitik Vora</p><a href="#main">Back to top ↑</a></footer>
+</main>
+</body></html>
