@@ -36,7 +36,7 @@ footer p { margin:0; }
 @media print { main { max-width:none; padding:0; } body { background:white; } details,footer>a,.skip-link { display:none; } }
 
 .role-location { color:var(--muted); font-size:12px; margin:2px 0 10px; }
-.role-details { padding-left:18px; margin:0 0 8px; font-size:14px; }
+.role-details { list-style:none; padding-left:0; margin:0 0 8px; font-size:14px; }
 .role-details li { margin-bottom:10px; }
 
 .profile-header { display:flex; justify-content:space-between; align-items:flex-start; gap:30px; }
